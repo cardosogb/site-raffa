@@ -33,6 +33,10 @@ Os botões abrem `wa.me/5527995151998` com a mensagem:
 
 > Olá, Rafaella. Vim pelo site e gostaria de orientação jurídica na área criminal.
 
+Cada área de atuação abre com o nome da área no fim, por exemplo:
+
+> Olá, Rafaella. Vim pelo site e gostaria de orientação jurídica sobre habeas corpus.
+
 O botão "Um familiar foi preso agora" usa uma mensagem de urgência própria.
 Para trocar o número ou os textos, procure por `wa.me` em `index.html`.
 
