@@ -31,30 +31,56 @@
     }
   });
 
-  if ('IntersectionObserver' in window) {
-    // Destaca no menu a seção que está na tela
-    var links = Array.prototype.slice.call(menu.querySelectorAll('a'));
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        links.forEach(function (link) {
-          link.classList.toggle('is-active', link.getAttribute('href') === '#' + entry.target.id);
-        });
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    links.forEach(function (link) {
-      var section = document.querySelector(link.getAttribute('href'));
-      if (section) spy.observe(section);
-    });
+  // Destaca no menu a seção que está na tela
+  var links = Array.prototype.slice.call(menu.querySelectorAll('a'));
+  var sections = links.map(function (link) { return document.querySelector(link.getAttribute('href')); });
+  var nav = document.querySelector('.nav');
 
-    // Esconde o botão flutuante quando a seção de contato está na tela
-    var floatBtn = document.querySelector('.float');
-    var contact = document.getElementById('contato');
-    if (floatBtn && contact) {
-      new IntersectionObserver(function (entries) {
-        floatBtn.classList.toggle('is-hidden', entries[0].isIntersecting);
-      }).observe(contact);
+  function setActive(index) {
+    links.forEach(function (link, i) { link.classList.toggle('is-active', i === index); });
+  }
+
+  // Depois de um clique no menu, o item clicado fica destacado até a pessoa rolar por conta própria.
+  // Sem isso, em telas altas as últimas seções cabem juntas e o destaque pularia para "Contato".
+  var clicked = -1;
+  links.forEach(function (link, i) {
+    link.addEventListener('click', function () { clicked = i; setActive(i); });
+  });
+  ['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+    window.addEventListener(type, function () { clicked = -1; }, { passive: true });
+  });
+
+  function updateActive() {
+    if (clicked !== -1) { setActive(clicked); return; }
+    var line = nav.offsetHeight + window.innerHeight * 0.3;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    var current = -1;
+    if (atBottom) {
+      current = sections.length - 1;
+    } else {
+      sections.forEach(function (section, i) {
+        if (section && section.getBoundingClientRect().top <= line) current = i;
+      });
     }
+    setActive(current);
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; updateActive(); });
+  }, { passive: true });
+  window.addEventListener('resize', updateActive);
+  updateActive();
+
+  // Esconde o botão flutuante quando a seção de contato está na tela
+  var floatBtn = document.querySelector('.float');
+  var contact = document.getElementById('contato');
+  if (floatBtn && contact && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      floatBtn.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }).observe(contact);
   }
 
   // Copiar e-mail
