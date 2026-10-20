@@ -16,7 +16,7 @@ assets/img/         Fotos, imagem de compartilhamento e ícones
 ## Seções
 
 1. Topo com chamada, botões de WhatsApp e selo de plantão para flagrantes
-2. Áreas de atuação em abas (Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos, Contra a vida e Fases do caso) e destaque para audiência de custódia
+2. Áreas de atuação em abas (Fases do caso, Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos e Contra a vida) e destaque para audiência de custódia
 3. Sobre, com a foto do escritório
 4. Dúvidas comuns
 5. Contato: WhatsApp, e-mail e endereço com link para o mapa
