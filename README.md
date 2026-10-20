@@ -11,6 +11,8 @@ privacidade.html    Política de privacidade (LGPD)
 assets/css/style.css
 assets/js/early.js  Marca que o JavaScript está ativo (carrega antes da página)
 assets/js/main.js   Menu do celular, destaque da seção no menu, abas das áreas, botão flutuante e "Copiar e-mail"
+assets/css/fonts.css  Declaração das fontes
+assets/fonts/       Arquivos das fontes e licenças
 assets/img/         Fotos, imagem de compartilhamento e ícones
 _headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
 .well-known/security.txt  Contato para avisos de segurança
@@ -28,7 +30,7 @@ _headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
 ## Identidade
 
 - Cores: bordô `#5A1E2B`, creme `#F3EDE4`, cinza-quente `#6B625A`, preto `#1A1A1A`
-- Fontes: DM Serif Display (títulos) e Lato (texto), carregadas do Google Fonts
+- Fontes: DM Serif Display (títulos) e Lato (texto), servidas pelo próprio site em `assets/fonts/` (licença SIL Open Font License, textos da licença na mesma pasta)
 - Logotipo: monograma RC + filete + "Rafaella Cazelli / Advogada criminalista"
 
 ## WhatsApp
@@ -59,13 +61,14 @@ O site é estático: não tem formulário, login, banco de dados nem bibliotecas
 
 Já aplicado no código:
 
-- **Content-Security-Policy** em cada página e no `_headers`: só carrega arquivos do próprio site e as fontes do Google Fonts, e bloqueia scripts embutidos, formulários e plugins.
+- **Content-Security-Policy** em cada página e no `_headers`: só carrega arquivos do próprio site e bloqueia scripts embutidos, formulários e plugins.
 - **Proteção contra a página ser exibida dentro de outro site** (`frame-ancestors 'none'` e `X-Frame-Options`), só pelo `_headers`.
 - **HSTS**, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (câmera, microfone e localização desligados) e `Cross-Origin-Opener-Policy`.
 - Links externos com `rel="noopener"`.
 - Imagens sem metadados (sem localização nem dados da câmera).
 - `security.txt` com o contato para avisos de segurança (renovar a data de `Expires` todo ano).
 - Aviso no rodapé contra o golpe do falso advogado, com o número oficial de WhatsApp.
+- Fontes hospedadas no próprio site: nenhum dado de quem visita vai para o Google ou outro serviço ao abrir a página.
 
 Fazer ao publicar:
 
