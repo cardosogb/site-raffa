@@ -219,6 +219,11 @@ html:not(.js) .tabs { display: none; }
 .footer { background: var(--wine-d); color: var(--blush); font-size: 13px; }
 .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 24px; padding-block: 22px; }
 .footer-meta { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.footer-alert {
+  flex: 1 1 100%; margin: 0; padding-bottom: 16px; border-bottom: 1px solid rgba(243, 237, 228, 0.18);
+  font-size: 14px; line-height: 1.5; color: var(--cream);
+}
+.footer-alert b { color: var(--white); }
 .footer-meta a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- WhatsApp flutuante ---------- */
