@@ -83,6 +83,38 @@
     }).observe(contact);
   }
 
+  // Abas das áreas de atuação
+  var tabList = document.querySelector('.tabs');
+  if (tabList) {
+    var tabs = Array.prototype.slice.call(tabList.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (tab) { return document.getElementById(tab.getAttribute('aria-controls')); });
+
+    var selectTab = function (index, focus) {
+      tabs.forEach(function (tab, i) {
+        var on = i === index;
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+      if (focus) tabs[index].focus();
+    };
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { selectTab(i, false); });
+    });
+    tabList.addEventListener('keydown', function (event) {
+      var current = tabs.indexOf(document.activeElement);
+      if (current === -1) return;
+      var next = null;
+      if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next !== null) { event.preventDefault(); selectTab(next, true); }
+    });
+    selectTab(0, false);
+  }
+
   // Copiar e-mail
   document.querySelectorAll('[data-copy]').forEach(function (button) {
     button.addEventListener('click', function () {

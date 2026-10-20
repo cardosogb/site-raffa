@@ -9,14 +9,14 @@ Site de uma página para a advogada Rafaella Cazelli (OAB/ES 37.587), em Vitóri
 index.html          Página principal
 privacidade.html    Política de privacidade (LGPD)
 assets/css/style.css
-assets/js/main.js   Menu do celular, destaque da seção no menu, botão flutuante e "Copiar e-mail"
+assets/js/main.js   Menu do celular, destaque da seção no menu, abas das áreas, botão flutuante e "Copiar e-mail"
 assets/img/         Fotos, imagem de compartilhamento e ícones
 ```
 
 ## Seções
 
 1. Topo com chamada, botões de WhatsApp e selo de plantão para flagrantes
-2. Áreas de atuação (os cards abrem ao clicar) e destaque para audiência de custódia
+2. Áreas de atuação em abas (Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos, Contra a vida e Fases do caso) e destaque para audiência de custódia
 3. Sobre, com a foto do escritório
 4. Dúvidas comuns
 5. Contato: WhatsApp, e-mail e endereço com link para o mapa
@@ -53,7 +53,7 @@ No GitHub Pages: Settings → Pages → Deploy from a branch → escolha a branc
 
 - **Domínio**: registrar o domínio (por exemplo, `rafaellacazelli.adv.br` no Registro.br; o `.adv.br` exige inscrição na OAB).
 - **Endereço absoluto**: depois de ter o domínio, trocar `assets/img/og-image.jpg` na tag `og:image` pelo endereço completo (`https://dominio/assets/img/og-image.jpg`) e adicionar `<link rel="canonical">`. Isso melhora a prévia do link no WhatsApp e nas redes sociais.
-- **Revisão da Rafaella**: as explicações das áreas de atuação, as respostas das dúvidas e a política de privacidade foram escritas em linguagem simples, mas são conteúdo jurídico. Ela deve revisar antes da publicação.
+- **Revisão da Rafaella**: confirmar se atende todos os crimes listados nas abas (e, em crimes contra a honra e violência doméstica, se atua só na defesa ou também para a vítima). As explicações das áreas de atuação, as respostas das dúvidas e a política de privacidade foram escritas em linguagem simples, mas são conteúdo jurídico. Ela deve revisar antes da publicação.
 - **Plantão 24 horas**: o site anuncia plantão para flagrantes. Remover essas menções se o atendimento não for 24 horas.
 - **Google Meu Negócio**: cadastrar o escritório para aparecer nas buscas e no Google Maps.
 
