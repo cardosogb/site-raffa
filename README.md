@@ -10,7 +10,7 @@ index.html          Página principal
 privacidade.html    Política de privacidade (LGPD)
 assets/css/style.css
 assets/js/early.js  Marca que o JavaScript está ativo (carrega antes da página)
-assets/js/main.js   Menu do celular, destaque da seção no menu, abas das áreas, botão flutuante e "Copiar e-mail"
+assets/js/main.js   Interações: topo que muda de cor, barra de leitura, menu, abas, animações de entrada, relógio, passos, perguntas, botão flutuante e copiar
 assets/css/fonts.css  Declaração das fontes
 assets/fonts/       Arquivos das fontes e licenças
 assets/img/         Fotos, imagem de compartilhamento e ícones
@@ -21,11 +21,16 @@ _headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
 
 ## Seções
 
-1. Topo com chamada, botões de WhatsApp e selo de plantão para flagrantes
-2. Áreas de atuação em abas (Fases do caso, Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos e Contra a vida) e destaque para audiência de custódia
-3. Sobre, com a foto do escritório
-4. Dúvidas comuns
-5. Contato: WhatsApp, e-mail e endereço com link para o mapa
+1. Abertura bordô com a foto em arco, botões de WhatsApp, selo de plantão e o caminho do processo (da investigação à execução)
+2. Faixa com os crimes em que a advogada atua; cada nome abre a aba certa nas áreas de atuação
+3. "Alguém foi preso agora?": relógio de 24 horas da audiência de custódia, três passos e botão de urgência
+4. Áreas de atuação em abas (Fases do caso, Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos e Contra a vida)
+5. Como funciona o atendimento, em quatro passos com uma linha que se preenche ao rolar
+6. Sobre, com a foto do escritório, frase de destaque e dados de inscrição e formação
+7. Dúvidas comuns, que abrem com animação
+8. Contato: WhatsApp, e-mail e endereço, com botões de copiar e link para o mapa
+
+As animações respeitam a opção "reduzir movimento" do aparelho: com ela ligada, tudo aparece parado e completo.
 
 ## Identidade
 
