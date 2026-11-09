@@ -1,0 +1,94 @@
+# Site · Rafaella Cazelli, advogada criminalista
+
+Site de uma página para a advogada Rafaella Cazelli (OAB/ES 37.587), em Vitória/ES.
+É HTML, CSS e JavaScript puros, sem dependências nem etapa de build.
+
+## Estrutura
+
+```
+index.html          Página principal
+privacidade.html    Política de privacidade (LGPD)
+assets/css/style.css
+assets/js/early.js  Marca que o JavaScript está ativo (carrega antes da página)
+assets/js/main.js   Interações: topo que muda de cor, barra de leitura, menu, abas, animações de entrada, relógio, passos, perguntas, botão flutuante e copiar
+assets/css/fonts.css  Declaração das fontes
+assets/fonts/       Arquivos das fontes e licenças
+assets/img/         Fotos, imagem de compartilhamento e ícones
+robots.txt e sitemap.xml  Indicam ao Google as páginas do site
+_headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
+.well-known/security.txt  Contato para avisos de segurança
+.nojekyll           Faz o GitHub Pages publicar os arquivos que começam com ponto ou sublinhado
+```
+
+## Seções
+
+1. Abertura bordô com a foto em arco, botões de WhatsApp, selo de plantão e o caminho do processo (da investigação à execução)
+2. Faixa com os crimes em que a advogada atua; cada nome abre a aba certa nas áreas de atuação
+3. "Alguém foi preso agora?": relógio de 24 horas da audiência de custódia, três passos e botão de urgência
+4. Áreas de atuação em abas (Fases do caso, Patrimônio, Honra, Lei de Drogas, Violência doméstica, Crimes econômicos e Contra a vida)
+5. Como funciona o atendimento, em quatro passos com uma linha que se preenche ao rolar
+6. Sobre, com a foto do escritório, frase de destaque e dados de inscrição e formação
+7. Dúvidas comuns, que abrem com animação
+8. Contato: WhatsApp, e-mail e endereço, com botões de copiar e link para o mapa
+
+As animações respeitam a opção "reduzir movimento" do aparelho: com ela ligada, tudo aparece parado e completo.
+
+## Identidade
+
+- Cores: bordô `#5A1E2B`, creme `#F3EDE4`, cinza-quente `#6B625A`, preto `#1A1A1A`
+- Fontes: DM Serif Display (títulos) e Lato (texto), servidas pelo próprio site em `assets/fonts/` (licença SIL Open Font License, textos da licença na mesma pasta)
+- Logotipo: monograma RC + filete + "Rafaella Cazelli / Advogada criminalista"
+
+## WhatsApp
+
+Os botões abrem `wa.me/5527995151998` com a mensagem:
+
+> Olá, Rafaella. Vim pelo site e gostaria de orientação jurídica na área criminal.
+
+Cada área de atuação abre com o nome da área no fim, por exemplo:
+
+> Olá, Rafaella. Vim pelo site e gostaria de orientação jurídica sobre habeas corpus.
+
+O botão "Um familiar foi preso agora" usa uma mensagem de urgência própria.
+Para trocar o número ou os textos, procure por `wa.me` em `index.html`.
+
+## Ver no computador
+
+Abra `index.html` no navegador. Não precisa de servidor.
+
+## Publicar
+
+Recomendado: **Cloudflare Pages** ou **Netlify**, porque leem o arquivo `_headers` e aplicam todos os cabeçalhos de segurança.
+O GitHub Pages também funciona, mas ignora o `_headers`; nesse caso vale só a política de segurança que está dentro das páginas.
+
+## Segurança
+
+O site é estático: não tem formulário, login, banco de dados nem bibliotecas de terceiros.
+
+Já aplicado no código:
+
+- **Content-Security-Policy** em cada página e no `_headers`: só carrega arquivos do próprio site e bloqueia scripts embutidos, formulários e plugins.
+- **Proteção contra a página ser exibida dentro de outro site** (`frame-ancestors 'none'` e `X-Frame-Options`), só pelo `_headers`.
+- **HSTS**, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (câmera, microfone e localização desligados) e `Cross-Origin-Opener-Policy`.
+- Links externos com `rel="noopener"`.
+- Imagens sem metadados (sem localização nem dados da câmera).
+- `security.txt` com o contato para avisos de segurança (renovar a data de `Expires` todo ano).
+- Aviso no rodapé contra o golpe do falso advogado, com o número oficial de WhatsApp.
+- Fontes hospedadas no próprio site: nenhum dado de quem visita vai para o Google ou outro serviço ao abrir a página.
+
+Fazer ao publicar:
+
+1. Ativar **HTTPS obrigatório** na hospedagem.
+2. Ativar a **verificação em duas etapas** no GitHub, na hospedagem, no Registro.br, no Google e no WhatsApp.
+3. No Registro.br: **renovação automática** do domínio e **DNSSEC**.
+4. Testar em [securityheaders.com](https://securityheaders.com) e [SSL Labs](https://www.ssllabs.com/ssltest/). A meta é nota A.
+
+## Pendências antes de publicar
+
+- **Domínio**: `rafaellacazelli.adv.br`, registrado na Hostinger (vence em 09/11/2027). Ativar a renovação automática.
+- **Aviso contra golpes**: a Rafaella deve aprovar o texto do rodapé ("Atenção a golpes: meu único número de WhatsApp é (27) 99515-1998. Nunca peço pagamentos por outro número.").
+- **Revisão da Rafaella**: confirmar se atende todos os crimes listados nas abas (e, em crimes contra a honra e violência doméstica, se atua só na defesa ou também para a vítima). As explicações das áreas de atuação, as respostas das dúvidas e a política de privacidade foram escritas em linguagem simples, mas são conteúdo jurídico. Ela deve revisar antes da publicação.
+- **Plantão 24 horas**: o site anuncia plantão para flagrantes. Remover essas menções se o atendimento não for 24 horas.
+- **Google Meu Negócio**: cadastrar o escritório para aparecer nas buscas e no Google Maps.
+
+Os textos seguem o Provimento 205/2021 da OAB: não prometem resultado, não mostram preços e não oferecem consulta gratuita.
