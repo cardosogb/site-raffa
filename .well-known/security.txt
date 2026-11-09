@@ -2,3 +2,4 @@
 Contact: mailto:rafacazellif@gmail.com
 Expires: 2027-10-31T23:59:59Z
 Preferred-Languages: pt
+Canonical: https://rafaellacazelli.adv.br/.well-known/security.txt

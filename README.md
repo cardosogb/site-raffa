@@ -14,6 +14,7 @@ assets/js/main.js   Interações: topo que muda de cor, barra de leitura, menu, 
 assets/css/fonts.css  Declaração das fontes
 assets/fonts/       Arquivos das fontes e licenças
 assets/img/         Fotos, imagem de compartilhamento e ícones
+robots.txt e sitemap.xml  Indicam ao Google as páginas do site
 _headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
 .well-known/security.txt  Contato para avisos de segurança
 .nojekyll           Faz o GitHub Pages publicar os arquivos que começam com ponto ou sublinhado
@@ -84,8 +85,7 @@ Fazer ao publicar:
 
 ## Pendências antes de publicar
 
-- **Domínio**: registrar o domínio (por exemplo, `rafaellacazelli.adv.br` no Registro.br; o `.adv.br` exige inscrição na OAB).
-- **Endereço absoluto**: depois de ter o domínio, trocar `assets/img/og-image.jpg` na tag `og:image` pelo endereço completo (`https://dominio/assets/img/og-image.jpg`) e adicionar `<link rel="canonical">`. Isso melhora a prévia do link no WhatsApp e nas redes sociais.
+- **Domínio**: `rafaellacazelli.adv.br`, registrado na Hostinger (vence em 09/11/2027). Ativar a renovação automática.
 - **Aviso contra golpes**: a Rafaella deve aprovar o texto do rodapé ("Atenção a golpes: meu único número de WhatsApp é (27) 99515-1998. Nunca peço pagamentos por outro número.").
 - **Revisão da Rafaella**: confirmar se atende todos os crimes listados nas abas (e, em crimes contra a honra e violência doméstica, se atua só na defesa ou também para a vítima). As explicações das áreas de atuação, as respostas das dúvidas e a política de privacidade foram escritas em linguagem simples, mas são conteúdo jurídico. Ela deve revisar antes da publicação.
 - **Plantão 24 horas**: o site anuncia plantão para flagrantes. Remover essas menções se o atendimento não for 24 horas.
