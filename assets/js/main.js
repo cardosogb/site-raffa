@@ -96,8 +96,9 @@
     } catch (e) { /* sem textura, sem problema */ }
   }
 
-  if (!reduceMotion) {
-    // Quebra os títulos em palavras para elas subirem uma a uma
+  {
+    // Quebra os títulos em palavras para elas aparecerem uma a uma
+    // (com "reduzir movimento" elas só esmaecem, sem subir)
     document.querySelectorAll('.split').forEach(function (title) {
       var words = title.textContent.trim().split(/\s+/);
       title.setAttribute('aria-label', title.textContent.trim());
@@ -122,6 +123,9 @@
       }, { threshold: 0.4 }).observe(contactTitle);
     }
 
+  }
+
+  if (!reduceMotion) {
     if (finePointer) {
       var mx = 0, my = 0, tx = 0, ty = 0, raf = 0;
       var loop = function () {
@@ -153,7 +157,7 @@
   }
 
   // ---------- Revelação ao rolar ----------
-  if (hasIO && !reduceMotion) {
+  if (hasIO) {
     var revealer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -251,7 +255,6 @@
     var r = stepsWrap.getBoundingClientRect();
     var p = (window.innerHeight * 0.78 - r.top) / (r.height + window.innerHeight * 0.25);
     p = Math.max(0, Math.min(1, p));
-    if (reduceMotion) p = 1;
     stepsWrap.style.setProperty('--p', p.toFixed(3));
     stepItems.forEach(function (step, i) {
       step.classList.toggle('is-on', p >= i / Math.max(1, stepItems.length - 1) - 0.02);
@@ -264,7 +267,7 @@
     var body = details.querySelector('.faq-body');
     var anim = null;
     summary.addEventListener('click', function (event) {
-      if (reduceMotion || !body.animate) return;
+      if (!body.animate) return;
       event.preventDefault();
       if (anim) anim.cancel();
       if (details.open) {
