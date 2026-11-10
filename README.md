@@ -31,7 +31,7 @@ _headers            Cabeçalhos de segurança (Netlify e Cloudflare Pages)
 7. Dúvidas comuns, que abrem com animação
 8. Contato: WhatsApp, e-mail e endereço, com botões de copiar e link para o mapa
 
-As animações respeitam a opção "reduzir movimento" do aparelho: com ela ligada, tudo aparece parado e completo.
+O site roda sempre com todas as animações, mesmo quando o aparelho está com a opção de acessibilidade "reduzir movimento" ativada (decisão do cliente).
 
 ## Identidade
 
