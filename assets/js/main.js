@@ -1,6 +1,8 @@
 (function () {
   var root = document.documentElement;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // O site roda sempre com todas as animações, mesmo com "reduzir movimento" ativado no aparelho
+  // (decisão do cliente).
+  var reduceMotion = false;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
